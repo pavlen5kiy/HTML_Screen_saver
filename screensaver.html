@@ -13,6 +13,7 @@
             /* color: #F48800; Set clock color to orange */
             color: white;
             background-color: black; /* Added background color for better visibility */
+            cursor: none; /* Hide the cursor by default */
         }
         canvas {
             display: block;
@@ -23,6 +24,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 36px; /* Increased font size for better visibility */
+            opacity: 0.6;
         }
         #date {
             position: absolute;
@@ -30,6 +32,7 @@
             left: 50%;
             transform: translateX(-50%);
             font-size: 24px; /* Font size for the date */
+            opacity: 0.6;
         }
     </style>
 </head>
@@ -77,6 +80,32 @@
         let delta = 1; // Change in color value
         let increasing = true; // Direction of color change
 
+        let angle = 0; // Initial angle of the gradient
+        
+        let timeoutId; // Variable to store the timeout ID
+
+        // Function to hide the cursor
+        function hideCursor() {
+            document.body.style.cursor = 'none'; // Hide the cursor
+        }
+
+        // Function to show the cursor
+        function showCursor() {
+            document.body.style.cursor = 'auto'; // Show the cursor
+        }
+
+        // Event listener for mousemove event
+        document.addEventListener('mousemove', function() {
+            // Clear the previous timeout
+            clearTimeout(timeoutId);
+
+            // Show the cursor
+            showCursor();
+
+            // Set a new timeout to hide the cursor after 3 seconds of inactivity
+            timeoutId = setTimeout(hideCursor, 3000);
+        });
+
         // Render function to draw the gradient
         function render(gradient) {
             // Create a linear gradient
@@ -91,8 +120,6 @@
             ctx.fillRect(0, 0, canvas.width, canvas.height);
         }
         
-        let angle = 0; // Initial angle of the gradient
-
         // Animation loop
         function animate() {
 
