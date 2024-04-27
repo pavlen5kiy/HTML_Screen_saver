@@ -1,6 +1,7 @@
 // Get the clock and date elements
 const clockElement = document.getElementById("clock");
 const dateElement = document.getElementById("date");
+const footerElement = document.querySelector("footer")
 
 // Function to toggle visibility of clock and date
 function toggleVisibility() {
@@ -9,6 +10,7 @@ function toggleVisibility() {
   // Toggle visibility
   clockElement.style.display = isVisible ? "none" : "block";
   dateElement.style.display = isVisible ? "none" : "block";
+  footerElement.style.display = isVisible ? "none": "block";
 }
 
 // Event listener for key press
@@ -42,8 +44,9 @@ let angle = 0; // Initial angle of the gradient
 let timeoutId; // Variable to store the timeout ID
 
 if ([red, green, blue].filter((number) => number < 128).length >= 2) {
-  clockElement.style.color = "white";
-  dateElement.style.color = "white";
+  // clockElement.style.color = "white";
+  // dateElement.style.color = "white";
+  document.body.style.color = 'white'
 }
 
 // Function to hide the cursor

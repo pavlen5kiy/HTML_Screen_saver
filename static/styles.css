@@ -3,7 +3,6 @@ body {
     overflow: hidden;
     font-family: Andale Mono, monospace; /* Set font family to Andale Mono */
     text-align: center;
-    /* color: #F48800; Set clock color to orange */
     color: black;
     background-color: black; /* Added background color for better visibility */
     cursor: none; /* Hide the cursor by default */
@@ -26,4 +25,20 @@ canvas {
     transform: translateX(-50%);
     font-size: 24px; /* Font size for the date */
     opacity: 0.6;
+}
+#author {
+    display: block;
+    font-weight: bold;
+}
+footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2em;
+    /* color: white; */
+    opacity: 0.6;
+    padding: 20px 0;
+    z-index: 10; /* Increase z-index to bring footer to the front */
 }
