@@ -11,7 +11,7 @@
             font-family: Andale Mono, monospace; /* Set font family to Andale Mono */
             text-align: center;
             /* color: #F48800; Set clock color to orange */
-            color: white;
+            color: black;
             background-color: black; /* Added background color for better visibility */
             cursor: none; /* Hide the cursor by default */
         }
@@ -83,6 +83,11 @@
         let angle = 0; // Initial angle of the gradient
         
         let timeoutId; // Variable to store the timeout ID
+
+        if ([red, green, blue].filter(number => number < 128).length >= 2) {
+            clockElement.style.color = 'white'
+            dateElement.style.color = 'white'
+        }
 
         // Function to hide the cursor
         function hideCursor() {
