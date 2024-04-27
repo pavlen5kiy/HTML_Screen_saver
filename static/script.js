@@ -43,9 +43,7 @@ let angle = 0; // Initial angle of the gradient
 
 let timeoutId; // Variable to store the timeout ID
 
-if ([red, green, blue].filter((number) => number < 128).length >= 2) {
-  // clockElement.style.color = "white";
-  // dateElement.style.color = "white";
+if ([red, green, blue].filter((number) => number < 200).length == 3) {
   document.body.style.color = 'white'
 }
 
