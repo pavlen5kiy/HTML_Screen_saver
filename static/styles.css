@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Andale Mono, monospace; /* Set font family to Andale Mono */
+    text-align: center;
+    /* color: #F48800; Set clock color to orange */
+    color: black;
+    background-color: black; /* Added background color for better visibility */
+    cursor: none; /* Hide the cursor by default */
+}
+canvas {
+    display: block;
+}
+#clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px; /* Increased font size for better visibility */
+    opacity: 0.6;
+}
+#date {
+    position: absolute;
+    top: calc(50% - 50px); /* Adjust position above the clock */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px; /* Font size for the date */
+    opacity: 0.6;
+}
